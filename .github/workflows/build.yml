@@ -15,4 +15,11 @@ jobs:
           java-version: 20
           cache: gradle
       - name: Build with Gradle
-        run: ./gradlew build --no-daemon
+        run: ./gradlew --write-verification-metadata sha512 build
+
+      - name: Upload results
+        uses: actions/upload-artifact@v3
+        with:
+          name: gradle-verification-checksums
+          path: |
+            gradle/verification-metadata.xml
