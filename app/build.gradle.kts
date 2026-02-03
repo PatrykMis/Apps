@@ -10,7 +10,6 @@ if (useKeystoreProperties) {
 
 plugins {
     id("com.android.application")
-    kotlin("android")
     id("com.google.devtools.ksp")
     id("androidx.navigation.safeargs")
     id("kotlin-parcelize")
